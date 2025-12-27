@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "Selenium WebDriver tests using Mocha with Mochawesome reports",
     "scripts": {
-        "test-coba": "mocha tests/sesi-9/test_coba.js --recursive --timeout 60000",
-        "test-coba-mochawesome": "mocha tests/sesi-9/test_coba.js --recursive --timeout 60000 --reporter mochawesome",
-        "test-coba-simple-html": "mocha tests/sesi-9/test_coba.js --recursive --timeout 60000 --reporter mocha-simple-html-reporter --reporter-options output=reports/simple-html/report.html"
+        "test-coba": "mocha tests/sesi-10/test_coba.js --recursive --timeout 60000",
+        "test-coba-mochawesome": "mocha tests/sesi-10/test_coba.js --recursive --timeout 60000 --reporter mochawesome",
+        "test-coba-simple-html": "mocha tests/sesi-10/test_coba.js --recursive --timeout 60000 --reporter mocha-simple-html-reporter --reporter-options output=reports/simple-html/report.html"
 
         
     },
