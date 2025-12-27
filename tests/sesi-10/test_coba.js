@@ -6,15 +6,24 @@ const chrome = require('selenium-webdriver/chrome');
 describe('SauceDemo - Sort Z ke A (Minimal)', function () {
     let driver;
 
+    // 🔹 Hook BEFORE: dijalankan sekali sebelum semua test
     before(async function () {
-        const options = new chrome.Options();
-        options.addArguments('--start-maximized');
+    console.log('🔥 BEFORE: buka browser');
+    const options = new chrome.Options();
+    options.addArguments('--start-maximized');
 
-        driver = await new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(options)
-            .build();
+    driver = await new Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
+        .build();
     });
+
+    // 🔹 Hook AFTER: dijalankan sekali setelah semua test
+    after(async function () {
+        console.log('🔥 AFTER: tutup browser');
+        await driver.quit();
+    });
+
 
     it('Login dan sort produk Z ke A', async function () {
         await driver.get('https://www.saucedemo.com');
@@ -49,5 +58,4 @@ describe('SauceDemo - Sort Z ke A (Minimal)', function () {
         assert.deepStrictEqual(names, sortedDesc);
     });
 
-    // ❌ tidak ada after() → browser tetap terbuka
 });
